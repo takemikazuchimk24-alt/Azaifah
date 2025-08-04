@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - ProcuTrack</title>
+    <meta name="description" content="Ketahui lebih lanjut mengenai ProcuTrack, misi kami, dan pasukan pengasas yang memacu kejayaan kami.">
+    <meta name="keywords" content="tentang kami, syarikat, ProcuTrack, misi, visi, pasukan, pengasas">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Font moden */
+            background-color: #F5F5F0; /* Kelabu cerah asal */
+            animation: fadeIn 0.5s ease-in-out;
+            color: #333; /* Warna teks asas */
+        }
+        /* Style untuk butang CTA */
+        .cta-button {
+            transition: all 0.3s ease;
+            background-color: #215240; /* Hijau Gelap asal */
+            color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(33, 82, 64, 0.3); /* Shadow dengan warna hijau gelap */
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(33, 82, 64, 0.4);
+            background-color: #1A4234; /* Hijau Gelap sedikit lagi */
+        }
+        /* Gaya dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block; /* Untuk desktop */
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #215240; /* Sama dengan header */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            top: calc(100% + 10px); /* Jarakkan dari parent link */
+            left: 50%; /* Tengah relatif kepada parent dropdown */
+            transform: translateX(-50%); /* Laraskan untuk tengah tepat */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%);
+        }
+        .dropdown-content a {
+            color: white !important; /* Pastikan teks sub-menu putih */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center; /* Tengah teks sub-menu */
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            white-space: nowrap; /* Pastikan teks tidak patah */
+        }
+        .dropdown-content a:hover {
+            background-color: #1A4234; /* Warna hover untuk sub-menu */
+        }
+
+        /* Perubahan warna untuk elemen spesifik */
+        h1, h2, h3, h4 { /* Semua heading utama akan guna warna jenama */
+            color: #215240 !important; /* Hijau Gelap */
+        }
+        /* Link navigasi default & hover */
+        #header nav a {
+            color: rgba(255,255,255,0.7); /* Default links to white */
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        #header nav a:hover {
+            color: white; /* Light green tint on hover */
+        }
+        /* Logo ProcuTrack span */
+        #header nav a .text-white {
+            color: white !important; /* Ensure the span part is white */
+        }
+        /* Mobile menu button */
+        #mobile-menu-button {
+            color: white !important; /* Ensure hamburger icon is white */
+        }
+        /* Kelas untuk highlight navigasi aktif */
+        .nav-active-link { /* Navigasi aktif */
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            border-bottom: 2px solid #FACC15; /* Garisan bawah kuning untuk aktif */
+            padding-bottom: 4px;
+        }
+        
+        /* Warna teks footer - DIUBAH DI SINI */
+        footer p, footer a {
+            color: rgba(255,255,255,0.7) !important;
+            transition: color 0.2s ease;
+        }
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* Keyframes untuk animasi fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ----- Gaya Baru untuk Pasukan Pengasas & Pengenalan Syarikat ----- */
+        #tentang-kami-content { /* Nama seksyen diubah untuk lebih generik */
+            background-color: #F5F5F0; /* Latar belakang utama */
+            color: #333;
+        }
+        #tentang-kami-content h1, #tentang-kami-content h2 {
+            color: #215240 !important; /* Warna hijau gelap untuk tajuk di halaman ini */
+        }
+
+        /* Founder utama (baru) */
+        .main-founder-spotlight {
+            background-color: #1A4234; /* Hijau gelap dari CSS asal */
+            padding: 5rem 0;
+            color: white;
+        }
+        .main-founder-spotlight h2 {
+            font-family: 'Playfair Display', serif;
+            color: white !important;
+            font-weight: 700;
+        }
+        .main-founder-spotlight p {
+            color: rgba(255,255,255,0.85) !important;
+        }
+        .main-founder-spotlight .profile-image-large {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 5px solid #FACC15; /* Kuning terang untuk border */
+        }
+
+        .profile-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 2rem; /* Jarak antara kad */
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 4rem; /* Jarak dari founder utama */
+        }
+
+        .profile-card {
+            background-color: #2D6B54; /* Warna latar belakang kad yang sedikit terang */
+            border-radius: 1.5rem; /* Rounded corners */
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Shadow lebih kuat */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 350px; /* Ketinggian minimum untuk kad */
+            border: 2px solid #4C9E7D; /* Border hijau lebih terang */
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .profile-card-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-card-header .initial-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #FACC15; /* Kuning untuk lingkaran */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #215240; /* Hijau gelap untuk teks */
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .profile-card-header .plus-button {
+            background-color: #E63946; /* Merah jambu cerah */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            line-height: 1;
+            cursor: default; /* Change cursor to default, as it's just visual now */
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .profile-card-body {
+            padding: 0 1.5rem 1.5rem; /* Padding bawah lebih besar */
+            text-align: left;
+            flex-grow: 1; /* Memastikan badan kad mengisi ruang */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Memastikan teks nama di bawah */
+            position: relative; /* Needed for z-index of details hover */
+            z-index: 1;
+        }
+        .profile-card-body .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            color: #EBF2EE; /* Warna teks subtitle */
+        }
+        .profile-card-body .name {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+            color: white; /* Warna nama */
+            font-family: 'Playfair Display', serif; /* Font sama dengan hero heading */
+        }
+        .profile-card-body .role {
+            font-size: 1.1rem; /* text-lg */
+            opacity: 0.9;
+            color: #FACC15; /* Warna peranan kuning */
+        }
+        /* Image for profile card */
+        .profile-card .profile-image {
+            width: 100%;
+            height: 180px; /* Ketinggian tetap untuk imej di dalam kad */
+            object-fit: cover;
+            border-radius: 1.25rem 1.25rem 0 0; /* Hanya top corners rounded */
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Style untuk profile details on hover */
+        .profile-details-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(33, 82, 64, 0.95); /* Overlay hijau gelap separa telus */
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem; /* text-sm */
+            line-height: 1.5;
+            opacity: 0; /* Mula-mula tersembunyi */
+            pointer-events: none; /* Tidak boleh berinteraksi bila tersembunyi */
+            transition: opacity 0.3s ease; /* Transisi yang lancar */
+            z-index: 20; /* Pastikan ia muncul di atas kandungan kad */
+        }
+
+        /* Apabila kad induk di-hover, tunjukkan overlay */
+        .profile-card:hover .profile-details-hover {
+            opacity: 1;
+            pointer-events: auto; /* Boleh berinteraksi bila kelihatan */
+        }
+        .profile-details-hover .detail-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .profile-details-hover .detail-role {
+            font-size: 1.1rem;
+            color: #FACC15;
+            margin-bottom: 1rem;
+        }
+        .profile-details-hover .detail-description {
+            font-size: 0.95rem;
+        }
+
+        /* Mobile specific dropdown styles */
+        @media (max-width: 1023px) { /* Tailwind's 'lg' breakpoint is 1024px */
+            .dropdown-content {
+                position: relative; /* Change to relative for mobile to stack normally */
+                box-shadow: none; /* Remove shadow for mobile */
+                border-radius: 0; /* Remove border-radius */
+                background-color: rgba(33, 82, 64, 0.9); /* Slightly darker for sub-items */
+                min-width: unset; /* Remove min-width constraint */
+                width: 100%; /* Take full width */
+                left: unset;
+                transform: unset;
+                opacity: 1; /* Always visible when parent is "open" */
+                visibility: visible;
+                padding-left: 20px; /* Indent sub-items */
+            }
+            .dropdown-content a {
+                text-align: center; /* Center text for mobile */
+                padding: 8px 16px; /* Adjust padding for mobile sub-items */
+            }
+            .dropdown:hover .dropdown-content {
+                display: none; /* Override hover for mobile, JS will control visibility */
+            }
+            .dropdown.open .dropdown-content {
+                display: block; /* Controlled by JS on mobile */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header id="header" class="bg-[#215240] shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Procu<span class="text-white">Track</span></a>
+            
+            <div class="hidden lg:flex items-center space-x-6 mx-auto"> <a href="index.html" class="nav-main-link">Home</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">About Us <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="tentang-kami.html">Tentang Kami</a>
+                        <a href="soalan-lazim.html">Soalan Lazim</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Activity <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="key-in.html">Key-In Tempahan</a>
+                        <a href="register.html">Daftar Sekarang</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Careers <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="kelebihan.html">Kelebihan</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Shop <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="bahan-hq.html">Bahan HQ</a>
+                        <a href="potensi-pendapatan.html">Potensi Pendapatan</a>
+                        <a href="sokongan.html">Sokongan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="mobile-menu-button" class="lg:hidden text-white ml-auto"> 
+                <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="hamburger-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#215240] py-4">
+            <a href="index.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Home</a>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">About Us <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="tentang-kami.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Tentang Kami</a>
+                <a href="soalan-lazim.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Soalan Lazim</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Activity <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="key-in.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Key-In Tempahan</a>
+                <a href="register.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Daftar Sekarang</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Careers <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="kelebihan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Kelebihan</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Shop <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="bahan-hq.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Bahan HQ</a>
+                <a href="potensi-pendapatan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Potensi Pendapatan</a>
+                <a href="sokongan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Sokongan</a>
+            </div>
+            <a href="info-kit/MODUL-LENGKAP-EJEN-PROCUTRACK.pdf" target="_blank" download class="block text-center py-3 px-4 text-base bg-[#215240] text-white font-bold cta-button mt-2 mx-6">Muat Turun Info Kit</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="tentang-kami-content" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto mb-12 text-center hero-heading-container" data-aos="fade-down">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Mengenai ProcuTrack</h1>
+                    <p class="text-lg text-gray-600 mt-2">Pakar dalam Sourcing & Procurement Bertaraf Global.</p>
+                    <div class="max-w-4xl mx-auto space-y-6 mt-6">
+                        <p class="text-lg text-gray-700 text-center leading-relaxed">
+                            ProcuTrack membantu para peniaga di Malaysia mendapatkan produk dari China dengan cara yang lebih mudah, kos efektif dan selamat. Klien tidak perlu risau tentang logistik, mencari pembekal atau merunding harga – semuanya kami uruskan.
+                        </p>
+                        <p class="text-lg text-gray-700 text-center leading-relaxed">
+                            Setelah klien memberikan maklumat produk yang diingini, pasukan kami akan menguruskan keseluruhan proses sehingga barangan selamat tiba di tangan mereka.
+                        </p>
+                        <p class="text-lg text-gray-700 text-center leading-relaxed">
+                            Dalam masa yang sama, kami membuka peluang kepada sesiapa sahaja untuk menjadi ejen ProcuTrack. Tugasan adalah mudah – mencari individu atau perniagaan yang berminat untuk mengimport dari China, memperkenalkan mereka kepada kami, dan ejen akan menerima komisen bulanan berdasarkan jumlah pembelian pelanggan tersebut.
+                        </p>
+                        <p class="text-lg text-gray-700 text-center leading-relaxed">
+                            Tiada modal diperlukan, tiada keperluan untuk menyimpan stok. Ejen hanya perlu fokus untuk mencari pelanggan, manakala HQ akan menguruskan segala-galanya dari situ.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="main-founder-spotlight py-20 mt-12 rounded-xl" data-aos="fade-up">
+                    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
+                        <div class="flex-shrink-0" data-aos="fade-right">
+                            <img src="https://via.placeholder.com/300" alt="Profil Pengasas Utama" class="profile-image-large">
+                        </div>
+                        <div class="text-center md:text-left max-w-2xl" data-aos="fade-left">
+                            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">MUHAMMAD IZZAT IRFAN BIN ZAINI</h2>
+                            <p class="text-xl font-semibold text-blue-200 mb-4">CEO & Ketua Strategi, Pengasas Utama ProcuTrack</p>
+                            <p class="text-lg text-blue-100 mb-8 leading-relaxed">
+                                Dengan pengalaman lebih 5 tahun dalam bidang perolehan global dan logistik rentas sempadan, MUHAMMAD IZZAT IRFAN BIN ZAINI memimpin ProcuTrack dengan visi yang jelas untuk merevolusikan cara perniagaan di Malaysia mendapatkan produk dari China. Beliau telah berjaya membina rangkaian pembekal yang kukuh di peringkat antarabangsa dan menjimatkan kos jutaan ringgit untuk klien-klien ProcuTrack. Keahlian beliau dalam menguruskan rantaian bekalan yang kompleks memastikan setiap proses import berjalan lancar dan cekap.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <h2 class="text-3xl md:text-4xl font-bold mt-20 mb-12 text-[#215240]" data-aos="fade-down">Barisan Pasukan Pengasas Lain</h2>
+                <div class="profile-card-container">
+                    <div class="profile-card" data-aos="fade-up">
+                        <div class="profile-card-header">
+                            <div class="initial-circle">H</div>
+                            <div class="plus-button">+</div>
+                        </div>
+                        <img src="assets/Pasukan Pengasas Kami/Hafizuddin.jpg" alt="Profil MUHAMMAD HAFIZUDDIN RUSLI" class="profile-image">
+                        <div class="profile-card-body">
+                            <p class="subtitle">ProcuTrack</p>
+                            <h3 class="name">MUHAMMAD HAFIZUDDIN RUSLI</h3>
+                            <p class="role">Ketua Pemasaran</p>
+                        </div>
+                        <div class="profile-details-hover">
+                            <p class="detail-name">MUHAMMAD HAFIZUDDIN RUSLI</p>
+                            <p class="detail-role">Ketua Pemasaran</p>
+                            <p class="detail-description">
+                                Beliau bertanggungjawab memimpin strategi pemasaran ProcuTrack, memastikan mesej kami sampai kepada audiens yang tepat. Dengan kecekapan dalam komunikasi digital dan pembangunan jenama, beliau membina jambatan antara ProcuTrack dan bakal ejen serta klien.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="profile-card-header">
+                            <div class="initial-circle">N</div>
+                            <div class="plus-button">+</div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/215240/FFFFFF?text=Team+Member+3" alt="Profil Ahli Pasukan 3" class="profile-image">
+                        <div class="profile-card-body">
+                            <p class="subtitle">ProcuTrack</p>
+                            <h3 class="name">Nama Ahli 3</h3>
+                            <p class="role">Jawatan: Ketua Teknologi</p>
+                        </div>
+                        <div class="profile-details-hover">
+                            <p class="detail-name">Nama Ahli 3</p>
+                            <p class="detail-role">Jawatan: Ketua Teknologi</p>
+                            <p class="detail-description">
+                                Berbekalkan kemahiran teknikal yang mendalam, beliau mengetuai pembangunan platform digital ProcuTrack. Komitmennya terhadap inovasi memastikan sistem ejen kami sentiasa canggih, selamat, dan mudah digunakan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="profile-card-header">
+                            <div class="initial-circle">A</div>
+                            <div class="plus-button">+</div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/215240/FFFFFF?text=Team+Member+4" alt="Profil Ahli Pasukan 4" class="profile-image">
+                        <div class="profile-card-body">
+                            <p class="subtitle">ProcuTrack</p>
+                            <h3 class="name">Nama Ahli 4</h3>
+                            <p class="role">Jawatan: Pengarah Operasi</p>
+                        </div>
+                        <div class="profile-details-hover">
+                            <p class="detail-name">Nama Ahli 4</p>
+                            <p class="detail-role">Jawatan: Pengarah Operasi</p>
+                            <p class="detail-description">
+                                Mengawasi semua operasi harian ProcuTrack, memastikan kelancaran proses dari pesanan hingga penghantaran. Dengan ketelitian dan kemahiran pengurusan, beliau memastikan setiap transaksi dikendalikan dengan cekap dan tepat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg">© 2024 ProcuTrack. Hak Cipta Terpelihara.</p>
+            <p class="text-base text-gray-400 mt-2">ProcuTrack - Solusi Perolehan Pintar, Bisnes Lebih Cemerlang!</p>
+            <div class="mt-4 text-base space-x-4">
+                <a href="link-ke-terma-syarat.html" class="text-gray-400 hover:text-white transition-colors duration-200">Terma & Syarat</a>
+                <span class="text-gray-500">|</span>
+                <a href="link-ke-polisi-privasi.html" class="text-gray-400 hover:text-white transition-colors duration-200">Polisi Privasi</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 900,
+                once: true,
+                offset: 50,
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerPath = document.getElementById('hamburger-path');
+            const hamburgerD = "M4 6h16M4 12h16m-7 6h7";
+            const closeD = "M6 18L18 6M6 6l12 12";
+
+            function toggleMobileMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerPath.setAttribute('d', hamburgerD);
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    hamburgerPath.setAttribute('d', closeD);
+                }
+            }
+
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+            /* Tutup menu mobile bila pautan diklik */
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            /* Handle mobile dropdown toggles */
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    if (content && content.classList.contains('mobile-dropdown-content')) {
+                        content.classList.toggle('hidden');
+                    }
+                });
+            });
+
+            /* Highlight pautan navigasi aktif */
+            const allNavLinks = document.querySelectorAll('#header nav a.nav-main-link, .dropdown-content a, #mobile-menu a');
+
+            function highlightActiveNav() {
+                const currentPathname = window.location.pathname.split('/').pop();
+                
+                allNavLinks.forEach(link => {
+                    let linkHref = link.getAttribute('href');
+                    if (!linkHref) return; 
+
+                    let linkPath = linkHref.split('#')[0].split('/').pop();
+
+                    link.classList.remove('nav-active-link');
+                    if (link.classList.contains('nav-main-link')) {
+                        link.classList.add('text-white', 'hover:text-[#EBF2EE]');
+                    }
+                    if (link.classList.contains('mobile-dropdown-toggle')) {
+                        link.classList.add('text-white', 'hover:bg-opacity-10', 'hover:bg-white');
+                    }
+
+
+                    // Logic for "Home" link
+                    if (linkPath === 'index.html' || linkPath === '') {
+                        if (currentPathname === 'index.html' || currentPathname === '') {
+                             link.classList.add('nav-active-link');
+                             if (link.classList.contains('nav-main-link')) { 
+                                link.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                             }
+                        }
+                    }
+                    // Logic for specific page links (e.g., tentang-kami.html, kelebihan.html, etc.)
+                    else if (currentPathname === linkPath) {
+                        link.classList.add('nav-active-link');
+                        if (link.classList.contains('nav-main-link')) { 
+                            link.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                        }
+
+                        // Also highlight the parent dropdown if a sub-link is active for desktop
+                        let parentDropdown = link.closest('.dropdown');
+                        if (parentDropdown) {
+                            let parentLink = parentDropdown.querySelector('.nav-main-link');
+                            if (parentLink) {
+                                parentLink.classList.add('nav-active-link');
+                                parentLink.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                            }
+                        }
+
+                        // For mobile menu, also highlight the toggle and open its content
+                        let mobileParentToggle = link.closest('.mobile-dropdown-content');
+                        if (mobileParentToggle) {
+                            mobileParentToggle.classList.remove('hidden'); 
+                            let toggleButton = mobileParentToggle.previousElementSibling;
+                            if (toggleButton && toggleButton.classList.contains('mobile-dropdown-toggle')) {
+                                toggleButton.classList.add('nav-active-link');
+                                toggleButton.classList.remove('text-white', 'hover:bg-opacity-10', 'hover:bg-white');
+                            }
+                        }
+                    }
+                });
+            }
+
+            highlightActiveNav(); // Call function when page loads
+            window.addEventListener('hashchange', highlightActiveNav); 
+            window.addEventListener('load', highlightActiveNav); 
+        });
+    </script>
+
+</body>
+</html>

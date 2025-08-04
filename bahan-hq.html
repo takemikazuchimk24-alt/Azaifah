@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahan Promosi & Sokongan Ejen - ProcuTrack</title>
+    <meta name="description" content="Muat turun bahan-bahan promosi dan sokongan terkini dari HQ ProcuTrack untuk kegunaan ejen.">
+    <meta name="keywords" content="bahan ejen, bahan promosi, sokongan ejen, muat turun, ProcuTrack, import China">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F0; /* Latar belakang baru */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        /* Style untuk butang CTA */
+        .cta-button {
+            transition: all 0.3s ease;
+            background-color: #215240; /* Warna butang CTA utama */
+            color: white;
+            border-radius: 0.5rem;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            background-color: #1A4234; /* Warna hover butang CTA */
+        }
+        /* Style untuk butang CTA sekunder (merah gelap) */
+        .cta-button-secondary {
+            background-color: #C62828; /* Merah Gelap */
+        }
+        .cta-button-secondary:hover {
+            background-color: #A02020; /* Merah Gelap hover */
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+        }
+        .material-card .icon-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 64px; /* Slightly larger for icons */
+            width: 64px;
+            border-radius: 50%;
+            background-color: #EBF2EE; /* Latar belakang lingkaran ikon jadi hijau cerah */
+            color: #215240; /* Warna ikon dalam lingkaran jadi hijau gelap */
+            font-size: 2.5rem; /* Larger icon */
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Styling for images within the cards */
+        .material-card .thumbnail-image {
+            width: 100%;
+            height: auto; /* Membiarkan tinggi gambar menyesuaikan diri secara automatik */
+            object-fit: contain; /* Memastikan keseluruhan gambar muat tanpa pemotongan */
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-bottom: 1.5rem; /* Tambah margin bawah untuk butang */
+            display: block; 
+        }
+        /* Hide icon placeholder if the card has an image */
+        .material-card.has-image .icon-placeholder {
+            display: none;
+        }
+
+        /* CSS rule for the Hero Heading color */
+        #bahan-hq-content .hero-heading-container h1 {
+            color: #215240 !important; /* Hijau Gelap */
+        }
+        /* Perubahan warna untuk elemen spesifik di halaman ini */
+        h1, h2, h3, h4 { /* Semua heading utama akan guna warna jenama */
+            color: #215240 !important; /* Hijau Gelap */
+        }
+
+        /* Gaya dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block; /* Untuk desktop */
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #215240; /* Sama dengan header */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            top: calc(100% + 10px); /* Jarakkan dari parent link */
+            left: 50%; /* Tengah relatif kepada parent dropdown */
+            transform: translateX(-50%); /* Laraskan untuk tengah tepat */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%);
+        }
+        .dropdown-content a {
+            color: white !important; /* Pastikan teks sub-menu putih */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: center; /* Tengah teks sub-menu */
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            white-space: nowrap; /* Pastikan teks tidak patah */
+        }
+        .dropdown-content a:hover {
+            background-color: #1A4234; /* Warna hover untuk sub-menu */
+        }
+
+        /* Link navigasi default & hover */
+        #header nav a {
+            color: white; /* Default links to white */
+        }
+        #header nav a:hover {
+            color: #EBF2EE; /* Light green tint on hover */
+        }
+        /* Logo ProcuTrack span */
+        #header nav a .text-white {
+            color: white !important; /* Ensure the span part is white */
+        }
+        /* Mobile menu button */
+        #mobile-menu-button {
+            color: white !important; /* Ensure hamburger icon is white */
+        }
+        /* Kelas untuk highlight navigasi aktif */
+        .nav-active-link { /* Navigasi aktif */
+            color: #ffffff !important; /* Kekalkan putih cerah untuk aktif di header */
+            font-weight: bold !important;
+            border-bottom: 2px solid #FACC15; /* Garisan bawah kuning untuk aktif */
+            padding-bottom: 4px;
+        }
+        
+        /* Ikon accordion FAQ (jika ada di halaman ini) */
+        .accordion-icon {
+            color: #C62828 !important; /* Merah gelap */
+        }
+        /* Warna teks footer */
+        footer p, footer a {
+            color: white !important; /* Semua teks footer jadi putih */
+        }
+
+        /* Keyframes untuk animasi fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile specific dropdown styles */
+        @media (max-width: 1023px) { /* Tailwind's 'lg' breakpoint is 1024px */
+            .dropdown-content {
+                position: relative; /* Change to relative for mobile to stack normally */
+                box-shadow: none; /* Remove shadow for mobile */
+                border-radius: 0; /* Remove border-radius */
+                background-color: rgba(33, 82, 64, 0.9); /* Slightly darker for sub-items */
+                min-width: unset; /* Remove min-width constraint */
+                width: 100%; /* Take full width */
+                left: unset;
+                transform: unset;
+                opacity: 1; /* Always visible when parent is "open" */
+                visibility: visible;
+                padding-left: 20px; /* Indent sub-items */
+            }
+            .dropdown-content a {
+                text-align: center; /* Center text for mobile */
+                padding: 8px 16px; /* Adjust padding for mobile sub-items */
+            }
+            .dropdown:hover .dropdown-content {
+                display: none; /* Override hover for mobile, JS will control visibility */
+            }
+            .dropdown.open .dropdown-content {
+                display: block; /* Controlled by JS on mobile */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header id="header" class="bg-[#215240] shadow-md sticky top-0 z-50"> 
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Procu<span class="text-white">Track</span></a> 
+            
+            <div class="hidden lg:flex items-center space-x-6 mx-auto"> <a href="index.html" class="nav-main-link">Home</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">About Us <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="tentang-kami.html">Tentang Kami</a>
+                        <a href="soalan-lazim.html">Soalan Lazim</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Activity <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="key-in.html">Key-In Tempahan</a>
+                        <a href="register.html">Daftar Sekarang</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Careers <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="kelebihan.html">Kelebihan</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="nav-main-link">Shop <span class="ml-1 text-xs">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="bahan-hq.html">Bahan HQ</a>
+                        <a href="potensi-pendapatan.html">Potensi Pendapatan</a>
+                        <a href="sokongan.html">Sokongan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="mobile-menu-button" class="lg:hidden text-white ml-auto"> 
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="hamburger-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#215240] py-4">
+            <a href="index.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Home</a>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">About Us <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="tentang-kami.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Tentang Kami</a>
+                <a href="soalan-lazim.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Soalan Lazim</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Activity <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="key-in.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Key-In Tempahan</a>
+                <a href="register.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Daftar Sekarang</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Careers <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="kelebihan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Kelebihan</a>
+            </div>
+            <div class="mobile-dropdown-toggle block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white cursor-pointer">Shop <span class="ml-1 text-xs">&#9662;</span></div>
+            <div class="mobile-dropdown-content hidden">
+                <a href="bahan-hq.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Bahan HQ</a>
+                <a href="potensi-pendapatan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Potensi Pendapatan</a>
+                <a href="sokongan.html" class="block text-center py-2 px-4 text-base text-white hover:bg-opacity-10 hover:bg-white">Sokongan</a>
+            </div>
+            <a href="info-kit/MODUL-LENGKAP-EJEN-PROCUTRACK.pdf" target="_blank" download class="block text-center py-3 px-4 text-base bg-[#215240] text-white font-bold cta-button mt-2 mx-6">Muat Turun Info Kit</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="bahan-hq-content" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto mb-12 text-center hero-heading-container" data-aos="fade-down">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Bahan Promosi & Sokongan Ejen</h1>
+                    <p class="text-lg text-gray-600 mt-2">Muat turun bahan-bahan promosi terkini dan kemas kini dari HQ di sini untuk kegunaan pemasaran anda.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up">
+                        <img src="assets/image/ProcuTrack.jpeg" alt="Panduan Ejen" class="thumbnail-image">
+                        <a href="assets/image/ProcuTrack.jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM.jpeg" alt="Misi Kurangkan Kos" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM.jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (1).jpeg" alt="Belian Pukal" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (1).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (2).jpeg" alt="Ejen Procutrack Info" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (2).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="400">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (3).jpeg" alt="Program Ejen Procutrack" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (3).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="500">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (4).jpeg" alt="Panduan Ejen Lanjut" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (4).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="600">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (5).jpeg" alt="Soalan Lazim Ejen" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (5).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg feature-card text-center material-card has-image" data-aos="fade-up" data-aos-delay="700">
+                        <img src="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (6).jpeg" alt="Testimoni Baru" class="thumbnail-image">
+                        <a href="assets/image/WhatsApp Image 2025-06-13 at 2.17.24 PM (6).jpeg" download class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white cta-button-secondary cta-button mt-2">
+                            Muat Turun
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 ProcuTrack. Hak Cipta Terpelihara.</p>
+            <p class="text-sm text-gray-400 mt-1">ProcuTrack - Kos Lebih Bijak, Bisnes Lebih Laju!</p>
+            <div class="mt-2 text-sm">
+                <a href="link-ke-terma-syarat.html" class="text-gray-400 hover:text-white mx-2">Terma & Syarat</a>
+                <span class="text-gray-400">|</span>
+                <a href="link-ke-polisi-privasi.html" class="text-gray-400 hover:text-white mx-2">Polisi Privasi</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800, // Durasi animasi dalam ms
+                once: true    // Animasi hanya berjalan sekali
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerPath = document.getElementById('hamburger-path');
+            
+            const hamburgerD = "M4 6h16M4 12h16m-7 6h7";
+            const closeD = "M6 18L18 6M6 6l12 12";
+
+            function toggleMobileMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerPath.setAttribute('d', hamburgerD);
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    hamburgerPath.setAttribute('d', closeD);
+                }
+            }
+
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+            /* Tutup menu mobile bila pautan diklik */
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            /* Handle mobile dropdown toggles */
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    if (content && content.classList.contains('mobile-dropdown-content')) {
+                        content.classList.toggle('hidden');
+                    }
+                });
+            });
+
+            /* Highlight pautan navigasi aktif */
+            const allNavLinks = document.querySelectorAll('#header nav a.nav-main-link, .dropdown-content a, #mobile-menu a');
+
+            function highlightActiveNav() {
+                const currentPathname = window.location.pathname.split('/').pop();
+                
+                allNavLinks.forEach(link => {
+                    let linkHref = link.getAttribute('href');
+                    if (!linkHref) return; // Skip if href is null or empty (e.g., parent dropdown links)
+
+                    let linkPath = linkHref.split('#')[0].split('/').pop();
+
+                    // Remove active class from all links first
+                    link.classList.remove('nav-active-link');
+                    // Reset to default white for main desktop nav links, unless it's a mobile dropdown toggle
+                    if (link.classList.contains('nav-main-link')) {
+                        link.classList.add('text-white', 'hover:text-[#EBF2EE]');
+                    }
+                    if (link.classList.contains('mobile-dropdown-toggle')) {
+                        link.classList.add('text-white', 'hover:bg-opacity-10', 'hover:bg-white');
+                    }
+
+
+                    // Logic for "Home" link
+                    if (linkPath === 'index.html' || linkPath === '') {
+                        if (currentPathname === 'index.html' || currentPathname === '') {
+                             link.classList.add('nav-active-link');
+                             if (link.classList.contains('nav-main-link')) { // Only remove if it's a desktop main link
+                                 link.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                             }
+                        }
+                    }
+                    // Logic for specific page links (e.g., tentang-kami.html, kelebihan.html, etc.)
+                    else if (currentPathname === linkPath) {
+                        link.classList.add('nav-active-link');
+                        if (link.classList.contains('nav-main-link')) { // Only remove if it's a desktop main link
+                            link.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                        }
+
+                        // Also highlight the parent dropdown if a sub-link is active for desktop
+                        let parentDropdown = link.closest('.dropdown');
+                        if (parentDropdown) {
+                            let parentLink = parentDropdown.querySelector('.nav-main-link');
+                            if (parentLink) {
+                                parentLink.classList.add('nav-active-link');
+                                parentLink.classList.remove('text-white', 'hover:text-[#EBF2EE]');
+                            }
+                        }
+
+                        // For mobile menu, also highlight the toggle and open its content
+                        let mobileParentToggle = link.closest('.mobile-dropdown-content');
+                        if (mobileParentToggle) {
+                            mobileParentToggle.classList.remove('hidden'); // Ensure content is open
+                            let toggleButton = mobileParentToggle.previousElementSibling;
+                            if (toggleButton && toggleButton.classList.contains('mobile-dropdown-toggle')) {
+                                toggleButton.classList.add('nav-active-link');
+                                toggleButton.classList.remove('text-white', 'hover:bg-opacity-10', 'hover:bg-white');
+                            }
+                        }
+                    }
+                });
+            }
+
+            highlightActiveNav(); // Call function when page loads
+            window.addEventListener('hashchange', highlightActiveNav); // Call when URL hash changes (though not used much with separate pages)
+            
+            // To ensure active state on page load even if no hash
+            window.addEventListener('load', highlightActiveNav); 
+        });
+    </script>
+
+</body>
+</html>
